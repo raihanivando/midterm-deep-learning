@@ -1,171 +1,157 @@
-#Midterm Deep Learning – UTS
+# **Midterm Deep Learning – UTS**
 
-Nama: Raihan Ivando Diaz
-Kelas: TK-46-02
-NIM: 110233093
+**Nama:** Raihan Ivando Diaz
+**Kelas:** TK-46-02
+**NIM:** 110233093
 
-Repositori ini berisi pengerjaan Midterm Deep Learning yang berfokus pada penerapan deep learning klasik / tradisional untuk tiga studi kasus berbeda:
+Repositori ini berisi pengerjaan **Midterm Deep Learning** dengan fokus pada penerapan *classical deep learning* untuk tiga permasalahan berbeda:
 
-Fraud Detection (binary classification)
+* **Fraud Detection** (Binary Classification)
+* **Song Year Prediction** (Regression)
+* **Customer Segmentation** (Clustering)
 
-Song Year Prediction (regression)
+Seluruh proses dikerjakan secara end-to-end menggunakan *Google Colab*, mulai dari pemuatan data, pembersihan, preprocessing, pembuatan model ANN, evaluasi, hingga interpretasi hasil.
 
-Customer Segmentation (clustering)
+---
 
-Seluruh eksperimen dikerjakan menggunakan Google Colab dan disusun sebagai pipeline yang lengkap mulai dari data loading, preprocessing, modeling, evaluasi, hingga interpretasi hasil.
+## **📘 1. Google Colab Notebooks**
 
-1. Colab Notebooks
+### **1. Fraud Detection – Binary Classification**
 
-Berikut notebook yang digunakan dalam pengerjaan tugas ini:
+🔗 Notebook:
+[https://colab.research.google.com/drive/1oy3oSqRwylEHJQU3sOE5CFnUKfMLPGvB?usp=sharing](https://colab.research.google.com/drive/1oy3oSqRwylEHJQU3sOE5CFnUKfMLPGvB?usp=sharing)
 
-1. Fraud Detection (Binary Classification)
+**Ringkasan:**
 
-Notebook:
-https://colab.research.google.com/drive/1oy3oSqRwylEHJQU3sOE5CFnUKfMLPGvB?usp=sharing
+* Mengolah dataset transaksi online dengan label `isFraud`.
+* Melakukan preprocessing: handling missing values, scaling, dan split data.
+* Membangun model *Artificial Neural Network* untuk klasifikasi fraud.
+* Evaluasi mencakup accuracy, precision, recall, F1-Score, serta confusion matrix.
+* Model digunakan untuk memprediksi probabilitas fraud pada data `test_transaction.csv`.
 
-Ringkasan:
+---
 
-Menggunakan data transaksi online dengan label isFraud.
+### **2. Song Year Prediction – Regression**
 
-Preprocessing meliputi handling missing values, scaling, dan train-test split.
+🔗 Notebook:
+[https://colab.research.google.com/drive/1SJDw8bEMYYy_d0JS6M0FO5SM0B5js3_o?usp=sharing](https://colab.research.google.com/drive/1SJDw8bEMYYy_d0JS6M0FO5SM0B5js3_o?usp=sharing)
 
-Menggunakan model Deep Learning (ANN) sebagai classifier.
+**Ringkasan:**
 
-Evaluasi menggunakan accuracy, precision, recall, dan confusion matrix.
+* Dataset berisi fitur numerik anonim dengan target berupa tahun rilis lagu.
+* Melakukan normalisasi, pengecekan outlier, dan pemisahan label fitur.
+* Menggunakan model ANN regresi untuk memprediksi tahun.
+* Evaluasi menggunakan MAE, MSE, dan RMSE.
+* Memberikan gambaran performa model dalam memperkirakan tahun berdasarkan pola audio.
 
-Model digunakan untuk memprediksi probabilitas fraud pada test_transaction.csv.
+---
 
-2. Song Year Prediction (Regression)
+### **3. Customer Clustering – Unsupervised Learning**
 
-Notebook:
-https://colab.research.google.com/drive/1SJDw8bEMYYy_d0JS6M0FO5SM0B5js3_o?usp=sharing
+🔗 Notebook:
+[https://colab.research.google.com/drive/1-wYI-6R09II2HKXgqRf1HtMRLobyavJZ?usp=sharing](https://colab.research.google.com/drive/1-wYI-6R09II2HKXgqRf1HtMRLobyavJZ?usp=sharing)
 
-Ringkasan:
+**Ringkasan:**
 
-Dataset berisi fitur numerik anonim dengan target berupa tahun rilis lagu.
+* Dataset mencakup perilaku finansial pengguna kartu kredit (balance, purchases, payments, limit, dll.).
+* Preprocessing: cleaning, scaling, dan reduksi dimensi (opsional).
+* Pendekatan deep clustering untuk menghasilkan representasi fitur sebelum klasterisasi.
+* Hasil berupa kelompok nasabah dengan karakteristik berbeda, seperti:
 
-Preprocessing: normalization, pengecekan outlier, dan pemisahan target.
+  * *High Spenders*
+  * *Installment Users*
+  * *Low Activity Customers*
+  * *Cash Advance Heavy Users*
 
-Model menggunakan ANN regresi.
+---
 
-Evaluasi menggunakan MAE, MSE, dan RMSE.
+## **📌 2. Project Overview**
 
-Hasil model menunjukkan kemampuan memprediksi tahun dengan tingkat error tertentu berdasarkan pola fitur audio.
+### **2.1 Objectives**
 
-3. Customer Clustering (Unsupervised Learning)
+Membangun pipeline deep learning yang komprehensif untuk:
 
-Notebook:
-https://colab.research.google.com/drive/1-wYI-6R09II2HKXgqRf1HtMRLobyavJZ?usp=sharing
+1. **Memprediksi transaksi fraud.**
+2. **Mengestimasi tahun rilis lagu.**
+3. **Mengelompokkan pelanggan berdasarkan perilaku penggunaan kartu kredit.**
 
-Ringkasan:
+Hal yang dipraktekkan:
 
-Data berisi perilaku transaksi pengguna kartu kredit (balance, payments, purchases, limit, dll.).
+* Data cleaning & preprocessing
+* Feature scaling
+* Handling missing values dan outliers
+* Pembangunan model ANN
+* Evaluasi sesuai task
+* Visualisasi dan interpretasi hasil
 
-Melakukan cleaning, scaling, dan reduksi dimensi (PCA jika dibutuhkan).
+---
 
-Menggunakan algoritma deep clustering / ANN-based embedding sebelum klasterisasi.
+### **2.2 Implemented Tasks**
 
-Evaluasi menggunakan visualisasi cluster (2D) dan interpretasi karakteristik tiap cluster, seperti:
+#### **Fraud Detection – Binary Classification**
 
-High spender
+* Target: `isFraud`
+* Fitur: nilai transaksi, waktu, info kartu, kode produk, dll.
+* Output: probabilitas transaksi merupakan fraud.
 
-Minimal spender
+#### **Song Year Prediction – Regression**
 
-Frequent installment users
+* Target: tahun rilis lagu.
+* Fitur: representasi numerik berbasis karakteristik audio.
+* Model: ANN regresi dengan beberapa dense layers.
 
-Risky customers
+#### **Customer Clustering – Unsupervised**
 
-2. Overview Project
-2.1 Tujuan
+* Fitur: balance, purchases, payments, credit limit, cash advance, frekuensi transaksi, dll.
+* Output: cluster perilaku pengguna.
 
-Proyek ini bertujuan membangun pipeline Deep Learning untuk tiga problem yang berbeda:
+---
 
-Klasifikasi – Memprediksi kemungkinan sebuah transaksi merupakan fraud.
+## **📂 3. Dataset Descriptions**
 
-Regresi – Memprediksi tahun rilis sebuah lagu berdasarkan fitur numerik audio.
+### **3.1 Fraud Detection**
 
-Clustering – Mengelompokkan pengguna kartu kredit berdasarkan pola perilaku finansialnya.
+* **train_transaction.csv** → data berlabel
+* **test_transaction.csv** → data untuk prediksi
+* Label:
 
-Setiap notebook mempraktikkan:
+  * `1` = Fraud
+  * `0` = Non-Fraud
 
-Data preprocessing & cleaning
+### **3.2 Song Year Prediction**
 
-Feature scaling
+* **midterm-regresi-dataset.csv**
+* Kolom pertama: tahun rilis
+* Kolom lainnya: fitur numerik anonim
 
-Handling missing values
+### **3.3 Customer Clustering**
 
-Model ANN (Artificial Neural Network)
+* **clusteringmidterm.csv**
+* Kolom utama mencakup:
 
-Evaluasi model sesuai jenis tugas
+  * `BALANCE`, `PURCHASES`, `PAYMENTS`, `CASH_ADVANCE`, `CREDIT_LIMIT`, `TENURE`, dll.
 
-Interpretasi dan visualisasi hasil
+---
 
-2.2 Ringkasan Implementasi
-Fraud Detection – Binary Classification
+## **📁 4. Project Structure**
 
-Target: isFraud
+```
+midterm-deep-learning/
+├── data/
+│   ├── train_transaction.csv
+│   ├── test_transaction.csv
+│   ├── midterm-regresi-dataset.csv
+│   └── clusteringmidterm.csv
+├── notebooks/
+│   ├── fraud_detection_dl.ipynb
+│   ├── regression_song_year_dl.ipynb
+│   └── clustering_credit_card_dl.ipynb
+├── src/
+│   ├── preprocessing.py
+│   ├── fraud_model.py
+│   ├── regression_model.py
+│   └── clustering_model.py
+├── requirements.txt
+└── README.md
+```
 
-Fitur mencakup nilai transaksi, informasi kartu, alamat, waktu, dan kode produk.
-
-Model ANN dengan beberapa hidden layers.
-
-Output: prob. fraud untuk setiap transaksi.
-
-Song Year Prediction – Regression
-
-Target berupa tahun rilis (angka).
-
-Input berupa fitur numerik anonim dari karakteristik audio.
-
-Model ANN regresi.
-
-Evaluasi menggunakan error metrics (MAE/MSE/RMSE).
-
-Customer Segmentation – Clustering
-
-Dataset kredit kartu: pembelian, frekuensi transaksi, cash advance, payments, credit limit, dan lainnya.
-
-Preprocessing + feature scaling.
-
-Pendekatan deep clustering untuk mendapatkan representasi fitur yang lebih baik.
-
-Hasil akhir berupa cluster & analisis interpretatif perilaku tiap kelompok.
-
-3. Dataset Descriptions
-3.1 Fraud Detection
-
-train_transaction.csv: data berlabel untuk pelatihan.
-
-test_transaction.csv: data tanpa label untuk prediksi final.
-
-Target:
-
-1 = fraud
-
-0 = tidak fraud
-
-3.2 Song Year Prediction
-
-midterm-regresi-dataset.csv
-
-Kolom pertama = target (tahun), sisanya = fitur numerik audio.
-
-3.3 Customer Clustering
-
-clusteringmidterm.csv
-
-Kolom penting:
-
-BALANCE, PURCHASES, PAYMENTS, MINIMUM_PAYMENTS
-
-CREDIT_LIMIT
-
-frekuensi transaksi & cash advance
-
-TENURE
-
-Setiap baris = satu nasabah kartu kredit.
-
-4. Struktur Project
-
-Struktur repositori dapat mengikuti format berikut:

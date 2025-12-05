@@ -14,7 +14,7 @@ Seluruh proses dikerjakan secara end-to-end menggunakan *Google Colab*, mulai da
 
 ---
 
-## **📘 1. Google Colab Notebooks**
+## ** 1. Google Colab Notebooks**
 
 ### **1. Fraud Detection – Binary Classification**
 
@@ -65,7 +65,7 @@ Seluruh proses dikerjakan secara end-to-end menggunakan *Google Colab*, mulai da
 
 ---
 
-## **📌 2. Project Overview**
+## ** 2. Project Overview**
 
 ### **2.1 Objectives**
 
@@ -107,7 +107,7 @@ Hal yang dipraktekkan:
 
 ---
 
-## **📂 3. Dataset Descriptions**
+## ** 3. Dataset Descriptions**
 
 ### **3.1 Fraud Detection**
 
@@ -133,7 +133,7 @@ Hal yang dipraktekkan:
 
 ---
 
-## **📁 4. Project Structure**
+##  4. Project Structure**
 
 ```
 midterm-deep-learning/
